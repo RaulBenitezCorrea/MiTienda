@@ -5,7 +5,7 @@ define('CONTROLADOR_DEFECTO', 'HomeController');
 define('ACCION_DEFECTO', 'index');
 
 // Configuración de la base URL (útil para generar enlaces dinámicos)
-define('BASE_URL', 'http://localhost/red_aee/');
+define('BASE_URL', 'http://localhost/MiTienda/');
 
 // Configuración de la base de datos (si es necesario)
 define('DB_HOST', '191.96.56.1');

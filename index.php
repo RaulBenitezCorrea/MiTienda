@@ -30,7 +30,7 @@ $requestUri = $_SERVER['REQUEST_URI'];
 $requestMethod = $_SERVER['REQUEST_METHOD'];
 
 // Elimina el prefijo de la URL (si estás usando un subdirectorio)
-$basePath = '/red_aee'; // Cambia esto según tu configuración
+$basePath = '/MiTienda'; // Cambia esto según tu configuración
 $route = str_replace($basePath, '', parse_url($requestUri, PHP_URL_PATH));
 $route = trim($route, '/');
 

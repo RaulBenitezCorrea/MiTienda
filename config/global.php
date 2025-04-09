@@ -4,8 +4,18 @@
 define('CONTROLADOR_DEFECTO', 'HomeController');
 define('ACCION_DEFECTO', 'index');
 
-// Configuración de la base URL (útil para generar enlaces dinámicos)
-define('BASE_URL', 'http://localhost/MiTienda/');
+// Detectar protocolo (http o https)
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https://" : "http://";
+
+// Obtener el host (localhost, 127.0.0.1, dominio, etc.)
+$host = $_SERVER['HTTP_HOST'];
+
+// Obtener la ruta del proyecto automáticamente
+$projectName = "/MiTienda/";
+
+// Definir la base URL dinámica
+define('BASE_URL', $protocol . $host . $projectName);
+;
 
 // Configuración de la base de datos (si es necesario)
 define('DB_HOST', '191.96.56.1');

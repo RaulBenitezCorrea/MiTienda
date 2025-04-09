@@ -29,8 +29,11 @@ spl_autoload_register('loadClasses');
 $requestUri = $_SERVER['REQUEST_URI'];
 $requestMethod = $_SERVER['REQUEST_METHOD'];
 
-// Elimina el prefijo de la URL (si estás usando un subdirectorio)
-$basePath = '/MiTienda'; // Cambia esto según tu configuración
+// Detecta automáticamente la base del proyecto
+$scriptName = dirname($_SERVER['SCRIPT_NAME']);
+$basePath = rtrim($scriptName, '/');
+
+// Limpia la ruta real
 $route = str_replace($basePath, '', parse_url($requestUri, PHP_URL_PATH));
 $route = trim($route, '/');
 
